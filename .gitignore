@@ -16,3 +16,7 @@ build/
 data/*.json
 data/*.csv
 data/*.txt
+
+assets/models/
+assets/hdris/
+assets/audio/
