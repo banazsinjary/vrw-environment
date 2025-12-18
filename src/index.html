@@ -22,22 +22,32 @@
 
   </head>
   <body>
-    <a-scene fog="type: exponential; color: #0b0d14; density: 0.035">
+    <a-scene>
       <a-assets>
         <img id="nightSky" src="../assets/hdris/vrw_night_sky.jpg">
         <a-asset-item id="campfireModel" src="../assets/models/Campfire.glb"></a-asset-item>
+        <img id="groundTex" src="../assets/images/ground.jpg" />
 
       </a-assets>
-      <a-sky src="#nightSky" rotation="0 -90 0" shader="flat" material="fog: false"> </a-sky>
+      <a-sky
+        src="#nightSky"
+        rotation="-12 -90 0"
+        shader="flat">
+      </a-sky>
+      <a-light type="ambient" intensity="0.5"></a-light>
 
 
       <a-plane
         rotation="-90 0 0"
         width="40"
         height="40"
-        color="#1a1a1a"
-        material="roughness: 1; metalness: 0">
+        material="src: #groundTex;
+          repeat: 12 12;
+          roughness: 1;
+          metalness: 0;
+          color: #aaaaaa">
       </a-plane>
+
 
 
     
@@ -54,11 +64,14 @@
           intensity="0.6"
           distance="4"
           decay="2"
-          position="0 0.6 -2"
+          position="0 0.6 0"
           soft-fire-flicker>
         </a-light>
 
       </a-entity>
+
+      <!-- Sitting log -->
+      
 
 
 
